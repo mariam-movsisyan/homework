@@ -1,0 +1,47 @@
+<div>
+    <h2 class="text-uppercase text-center mb-5">{{'REGISTRATION.REGISTRATION' |translate}}</h2>
+    <label>
+        <p class="label-txt">{{'COMMON.USERNAME' |translate}}</p>
+        <input type="text" class="input" [(ngModel)]="username">
+        <div class="line-box">
+            <div class="line"></div>
+        </div>
+    </label>
+    <div *ngFor="let error of getErrors()" showErrors>
+        <span *ngIf="error.field === 'username'">
+            {{'COMMON.ERRORS.FAILED' | translate}}
+        </span>
+    </div>
+    <label>
+        <p class="label-txt">{{'COMMON.PASSWORD' |translate}}</p>
+        <input type="text" class="input" [(ngModel)]="password">
+        <div class="line-box">
+            <div class="line"></div>
+        </div>
+    </label>
+    <div *ngFor="let error of getErrors()" showErrors>
+        <span *ngIf="error.field === 'password'">
+            {{'COMMON.ERRORS.FAILED' | translate}}
+        </span>
+    </div>
+    <label>
+        <p class="label-txt">{{'REGISTRATION.CONFIRM_PASSWORD' | translate}}</p>
+        <input type="text" class="input" [(ngModel)]="confirmPassword">
+        <div class="line-box">
+            <div class="line"></div>
+        </div>
+    </label>
+    <div *ngFor="let error of getErrors()" showErrors>
+        <span *ngIf="error.field === 'password'">
+            {{'COMMON.ERRORS.FAILED' | translate}}
+        </span>
+        <span *ngIf="error.field ==='exist_user'">
+            {{'COMMON.ERRORS.EXIST_USER' | translate}}
+        </span>
+        <span *ngIf="error.field ==='not-match'">
+            {{'COMMON.ERRORS.NOT_MATCH' | translate}}
+        </span>
+    </div>
+    <button type="submit" (click)="getSaveUsers( username, password, confirmPassword )">{{'REGISTRATION.REGISTRATION'
+        | translate}}</button>
+</div>

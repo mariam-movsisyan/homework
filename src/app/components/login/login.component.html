@@ -1,0 +1,32 @@
+<div>
+    <h2 class="text-uppercase text-center mb-5">{{'LOGIN.LOGIN' | translate}}</h2>
+    <label>
+        <p class="label-txt">{{'COMMON.USERNAME' | translate}}</p>
+        <input type="text" class="input" [(ngModel)]="username">
+        <div class="line-box">
+            <div class="line"></div>
+        </div>
+    </label>
+    <div *ngFor="let error of getErrors()" showErrors>
+        <span *ngIf="error.field === 'username'">
+            {{'COMMON.ERRORS.FAILED' | translate}}
+        </span>
+    </div>
+    <label>
+        <p class="label-txt">{{'COMMON.PASSWORD' | translate}}</p>
+        <input type="text" class="input" [(ngModel)]="password">
+        <div class="line-box">
+            <div class="line"></div>
+        </div>
+    </label>
+    <div *ngFor="let error of getErrors()" showErrors>
+        <span *ngIf="error.field === 'password'">
+            {{'COMMON.ERRORS.FAILED' | translate}}
+        </span>
+        <span *ngIf="error.field == 'message'">
+            {{'COMMON.ERRORS.MESSAGE' | translate}}
+        </span>
+    </div>
+    <button type="submit" (click)="goHomePage(availablePages.HOME_PAGE,username, password)"
+        *ngIf="failedAttempts < 3">{{'LOGIN.LOGIN' |translate}}</button>
+</div>

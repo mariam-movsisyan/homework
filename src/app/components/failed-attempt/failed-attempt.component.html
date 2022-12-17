@@ -1,0 +1,9 @@
+<div>
+    <h2 class="text-uppercase text-center mb-5">{{'FAILED_ATTEMPT.LOGIN_FAILED' | translate}}</h2>
+    <div class="d-flex justify-content-around mt-5">
+        <button type="button" class="btn btn-primary btn-lg"
+            (click)="setActivePage(availablePages.RECOVER_PASSVORD)">{{'FAILED_ATTEMPT.FORGOT' | translate}}</button>
+        <button type="button" class="btn btn-secondary btn-lg"
+            (click)="setActivePage(availablePages.REGISTRATION)">{{'FAILED_ATTEMPT.REGISTRATION' | translate}}</button>
+    </div>
+</div>

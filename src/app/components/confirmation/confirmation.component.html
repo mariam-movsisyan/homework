@@ -1,0 +1,13 @@
+<div>
+    <div class="language">
+        <button (click)="setTranslations(language.ENGLISH)">English</button>
+        <button (click)="setTranslations(language.ARMENIAN)">Հայերեն</button>
+    </div>
+    <h2 class="text-uppercase text-center mb-5">{{'CONFIRMATION.CONFIRMATION_TEXT' | translate}}</h2>
+    <div class="d-flex justify-content-around mt-5">
+        <button type="button" class="btn btn-primary btn-lg"
+            (click)="setActivePage(availablePages.LOGIN)">{{"CONFIRMATION.CONFIRMATION_YES" | translate}}</button>
+        <button type="button" class="btn btn-secondary btn-lg"
+            (click)="setActivePage(availablePages.REGISTRATION)">{{"CONFIRMATION.CONFIRMATION_NO" | translate}}</button>
+    </div>
+</div>

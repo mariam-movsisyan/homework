@@ -1,0 +1,25 @@
+.btn {
+    padding: 8px 40px;
+}
+
+.language {
+    text-align: left;
+}
+
+.language button {
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 5px;
+    margin-left: 3px;
+    transition: all .3s;
+}
+
+.language button:hover {
+    text-decoration: underline;
+    color: #720eac;
+}
+
+h3 {
+    padding-top: 5%;
+}
